@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/flex.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="guide">
+        <div>
+            <p class="guide__navigation">HOME / GUIDES /</p>
+            <h1>A Complete Guide to Flexbox</h1>
+            <p class="guide__author">Chris Coyier on Apr 8, 2013 (Updated on Dec 9, 2022)</p>
+            <p>Our comprehensive guide to CSS flexbox layout. This complete guide explains everything about flexbox, focusing on all the different possible properties for the parent element (the flex container) and the child elements (the flex items). It
+                also includes history, demos, patterns, and a browser support chart.</p>
+        </div>
+
+        <div class="guide__sponsor">
+            <div>
+                <h4>Brought to you by DigitalOcean</h4>
+                <p>DigitalOcean has the cloud computing services you need to support your growth at any stage. Get started with a free $200 credit!</p>
+            </div>
+            <img src="https://css-tricks.com/wp-content/uploads/2022/03/DO_Logo_icon_white.png"></img>
+        </div>
+    </div>
+    <main>
+        <div class="nav">
+            <div class="nav__connent">
+                <p>Table of contents</p>
+                <ul class="nav__connent__lists"></ul>
+            </div>
+            <div class="nav__download">
+                <div>
+                    <p class="nav__download__title">Get the poster!</p>
+                    <p class="nav__download__account">
+                        Reference this guide a lot? Here’s a high-res image you can print!
+                    </p>
+                    <button>DOWNLOAD FREE</button>
+                </div>
+                <img src="./43150-1.webp" alt="">
+            </div>
+        </div>
+        <div class="splitLine"></div>
+        <details>
+            <summary>Background</summary>
+        </details>
+        <details>
+            <summary>Basics and terminology</summary>
+        </details>
+        <details>
+            <summary>Flexbox properties</summary>
+            <div class="flexBox">
+                <div>
+                    <img src="	https://css-tricks.com/wp-content/uploads/2018/10/01-container.svg" alt="">
+                    <h2>Properties for the Parent (flex container)</h2>
+                    <div class="flexBox__mainBox--purple">
+                        <h3>display</h3>
+                        <p>This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.</p>
+                        <pre rel="CSS" class="flexBox__mainBox__codeBlock" data-line="">
+                            <code markup="tt" class=" language-css">
+                            <p>.container  {</p>
+                            <p>display: flex;</p>    
+                            <p>}</p></code></pre>
+                        <p>Note that CSS columns have no effect on a flex container.</p>
+                    </div>
+                    <div class="flexBox__mainBox--purple">
+                        <h3>flex-direction</h3>
+                        <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg" alt="">
+                        <p>This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either
+                            in horizontal rows or vertical columns.</p>
+                        <pre rel="CSS" class="flexBox__mainBox__codeBlock" data-line="">
+                            <code markup="tt" class=" language-css">
+                            <p>.container  {</p>
+                            <p>flex-direction: row | row-reverse | column | column-reverse;</p>    
+                            <p>}</p></code></pre>
+                        <ul>
+                            <li>
+                                <p>row (default): left to right in ltr; right to left in rtl</p>
+                            </li>
+                            <li>
+                                <p>row-reverse: right to left in ltr; left to right in rtl</p>
+                            </li>
+                            <li>
+                                <p>column: same as row but top to bottom</p>
+                            </li>
+                            <li>
+                                <p>column-reverse: same as row-reverse but bottom to top</p>
+                            </li>
+                        </ul>
+                        <p>There are some <a href="">visual demos of flex-wrap here.</a></p>
+                    </div>
+                    <div class="flexBox__mainBox--purple">
+                        <h3>flex-flow</h3>
+                        <p>This is a shorthand for the flex-direction and flex-wrap properties, which together define the flex container’s main and cross axes. The default value is row nowrap.</p>
+                    </div>
+                    <div class="flexBox__mainBox--purple">
+                        <h3>justify-content</h3>
+                        <img src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg" alt="">
+                        <p>This defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control
+                            over the alignment of items when they overflow the line.</p>
+                        <pre rel="CSS" class="flexBox__mainBox__codeBlock" data-line="">
+                            <code markup="tt" class=" language-css">
+                            <p>.container  {</p>
+                            <p>flex-wrap: nowrap | wrap | wrap-reverse;</p>    
+                            <p>}</p></code></pre>
+                        <ul>
+                            <li>
+                                <p>flex-start (default): items are packed toward the start of the flex-direction.</p>
+                            </li>
+                            <li>
+                                <p>flex-end: items are packed toward the end of the flex-direction.</p>
+                            </li>
+                            <li>
+                                <p>start: items are packed toward the start of the writing-mode direction.</p>
+                            </li>
+                            <li>
+                                <p>end: items are packed toward the end of the writing-mode direction.</p>
+                            </li>
+                            <li>
+                                <p>left: items are packed toward left edge of the container, unless that doesn’t make sense with the flex-direction, then it behaves like start.</p>
+                            </li>
+                            <li>
+                                <p>right: items are packed toward right edge of the container, unless that doesn’t make sense with the flex-direction, then it behaves like end.</p>
+                            </li>
+                            <li>
+                                <p>center: items are centered along the line</p>
+                            </li>
+                            <li>
+                                <p>space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line</p>
+                            </li>
+                            <li>
+                                <p>space-around: items are evenly distributed in the line with equal space around them. Note that visually the spaces aren’t equal, since all the items have equal space on both sides. The first item will have one unit of space
+                                    against the container edge, but two units of space between the next item because that next item has its own spacing that applies.</p>
+                            </li>
+                            <li>
+                                <p>space-evenly: items are distributed so that the spacing between any two items (and the space to the edges) is equal.</p>
+                            </li>
+                        </ul>
+                        <p>Note that that browser support for these values is nuanced. For example, space-between never got support from some versions of Edge, and start/end/left/right aren’t in Chrome yet. MDN <a href="">has detailed charts</a>. The safest
+                            values are flex-start, flex-end, and center.</p>
+                        <p>There are also two additional keywords you can pair with these values: safe and unsafe. Using safe ensures that however you do this type of positioning, you can’t push an element such that it renders off-screen (e.g. off the top)
+                            in such a way the content can’t be scrolled too (called “data loss”).</p>
+                    </div>
+                    <div class="flexBox__mainBox--purple">
+                        <h3>align-items</h3>
+                        <img src="	https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg" alt="">
+                        <p>This defines the default behavior for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).</p>
+                        <ul>
+                            <li>
+                                <p>stretch (default): stretch to fill the container (still respect min-width/max-width)</p>
+                            </li>
+                            <li>
+                                <p>flex-start / start / self-start: items are placed at the start of the cross axis. The difference between these is subtle, and is about respecting the flex-direction rules or the writing-mode rules.</p>
+                            </li>
+                            <li>
+                                <p>flex-end / end / self-end: items are placed at the end of the cross axis. The difference again is subtle and is about respecting flex-direction rules vs. writing-mode rules.</p>
+                            </li>
+                            <li>
+                                <p>center: items are centered in the cross-axis</p>
+                            </li>
+                            <li>
+                                <p>baseline: items are aligned such as their baselines align</p>
+                            </li>
+
+                        </ul>
+                        <p>The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords (although note browser support), and deal with helping you prevent aligning elements such that the content becomes inaccessible.</p>
+                    </div>
+                    <div class="flexBox__mainBox--purple">
+                        <h3>align-content</h3>
+                        <img src="	https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg" alt="">
+                        <p>This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.</p>
+                        <ul>
+                            <li>
+                                <p>normal (default): items are packed in their default position as if no value was set.</p>
+                            </li>
+                            <li>
+                                <p>flex-start / start: items packed to the start of the container. The (more supported) flex-start honors the flex-direction while start honors the writing-mode direction.</p>
+                            </li>
+                            <li>
+                                <p>flex-end / end: items packed to the end of the container. The (more support) flex-end honors the flex-direction while end honors the writing-mode direction.</p>
+                            </li>
+                            <li>
+                                <p>center: items centered in the container</p>
+                            </li>
+                            <li>
+                                <p>space-between: items evenly distributed; the first line is at the start of the container while the last one is at the end</p>
+                            </li>
+                            <li>
+                                <p>space-around: items evenly distributed with equal space around each line</p>
+                            </li>
+                            <li>
+                                <p>space-evenly: items are evenly distributed with equal space around them</p>
+                            </li>
+                            <li>
+                                <p>stretch: lines stretch to take up the remaining space</p>
+                            </li>
+                        </ul>
+                        <p>The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords (although note browser support), and deal with helping you prevent aligning elements such that the content becomes inaccessible.</p>
+                    </div>
+                    <div class="flexBox__mainBox--purple">
+                        <h3>gap, row-gap, column-gap</h3>
+                        <img src="	https://css-tricks.com/wp-content/uploads/2021/09/gap-1.svg" alt="">
+                        <p>The gap property explicitly controls the space between flex items. It applies that spacing only between items not on the outer edges.</p>
+                        <p>The behavior could be thought of as a minimum gutter, as if the gutter is bigger somehow (because of something like justify-content: space-between;) then the gap will only take effect if that space would end up smaller.</p>
+                        <p>It is not exclusively for flexbox, gap works in grid and multi-column layout as well.</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="	https://css-tricks.com/wp-content/uploads/2018/10/02-items.svg" alt="">
+                    <h2>Properties for the Children (flex items)</h2>
+                    <div class="flexBox__mainBox--orange">
+                        <h3>order</h3>
+                        <img src="https://css-tricks.com/wp-content/uploads/2018/10/order.svg" alt="">
+                        <p>By default, flex items are laid out in the source order. However, the order property controls the order in which they appear in the flex container.</p>
+                        <p>Items with the same order revert to source order.</p>
+                    </div>
+                    <div class="flexBox__mainBox--orange">
+                        <h3>flex-grow</h3>
+                        <img src="https://css-tricks.com/wp-content/uploads/2018/10/flex-grow.svg" alt="">
+                        <p>This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
+                        <p>If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, that child would take up twice as much of the space either one of
+                            the others (or it will try, at least).</p>
+                        <p>Negative numbers are invalid.</p>
+                    </div>
+                    <div class="flexBox__mainBox--orange">
+                        <h3>flex-shrink</h3>
+                        <p>This defines the ability for a flex item to shrink if necessary.</p>
+                        <p>Negative numbers are invalid.</p>
+                    </div>
+                    <div class="flexBox__mainBox--orange">
+                        <h3>flex-basis</h3>
+                        <p>This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means “look at my width or height property” (which was temporarily
+                            done by the main-size keyword until deprecated). The content keyword means “size it based on the item’s content” – this keyword isn’t well supported yet, so it’s hard to test and harder to know what its brethren max-content,
+                            min-content, and fit-content do.</p>
+                        <p>If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value. See this graphic.</p>
+                    </div>
+                    <div class="flexBox__mainBox--orange">
+                        <h3>flex</h3>
+                        <p>This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. The default is 0 1 auto, but if you set it with a single number value, like flex:
+                            5;, that changes the flex-basis to 0%, so it’s like setting flex-grow: 5; flex-shrink: 1; flex-basis: 0%;.</p>
+                        <p>It is recommended that you use this shorthand property rather than set the individual properties. The shorthand sets the other values intelligently.</p>
+                    </div>
+                    <div class="flexBox__mainBox--orange">
+                        <h3>align-self</h3>
+                        <img src="https://css-tricks.com/wp-content/uploads/2018/10/align-self.svg" alt="">
+                        <p>This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.</p>
+                        <p>Please see the align-items explanation to understand the available values.</p>
+                        <p>Note that float, clear and vertical-align have no effect on a flex item.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+        <details>
+            <summary>Prefixing Flexbox</summary>
+        </details>
+        <details>
+            <summary>Examples</summary>
+        </details>
+        <details>
+            <summary>Flexbox tricks</summary>
+        </details>
+        <details>
+            <summary>Browser support</summary>
+        </details>
+        <details>
+            <summary>Bugs</summary>
+        </details>
+        <details>
+            <summary>Related properties</summary>
+        </details>
+        <details>
+            <summary>More information</summary>
+        </details>
+        <details>
+            <summary>More sources</summary>
+        </details>
+
+    </main>
+
+    <script>
+        const ul = document.getElementsByClassName('nav__connent__lists')[0]
+        const navData = {
+            Part1: 'Background',
+            Part2: 'Basics and terminology',
+            Part3: 'Flexbox properties',
+            Part4: 'Prefixing Flexbox',
+            Part5: 'Examples',
+            Part6: 'Flexbox tricks',
+            Part7: 'Browser support',
+            Part8: 'Bugs',
+            Part9: 'Related properties',
+            Part10: 'More information',
+            Part11: 'More sources',
+        }
+        let navArr = ''
+        for (let arr in navData) {
+            navArr =
+                navArr + '<li><p>' + arr + ':</p><a href="">' + navData[arr] + '</a></li>'
+        }
+        ul.innerHTML = navArr
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+button {
+    outline: none;
+    border: 1px solid #363b42;
+    background-color: transparent;
+    background-color: #21262d;
+    &:hover {
+        background-color: #30363d;
+    }
+}
+
+$fontColor:#c9d1d9;
+$accountColor:#8b949e;
+a {
+    text-decoration: none;
+    color: $fontColor;
+}
+
+@mixin flex() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body {
+    background-color: #0d1117;
+}
+
+main {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.golang {
+    padding: 0 40px;
+    margin: 10px 0 20px 0;
+    @include flex;
+    p {
+        font-size: 25px;
+        font-weight: bold;
+        color: $fontColor;
+    }
+    >p {
+        span {
+            &:nth-child(2n+1) {
+                color: #58a6ff;
+            }
+        }
+    }
+    button {
+        margin-right: 10px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: $fontColor;
+        &:hover {
+            border-color: #8b949e;
+        }
+    }
+}
+
+nav {
+    padding: 0 40px;
+    padding-bottom: 30px;
+    >ul {
+        @include flex;
+        justify-content: left;
+        border-bottom: 1px solid #363b42;
+    }
+    li {
+        margin: 0 10px;
+        font-size: 18px;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+        display: inline-block;
+        color: $fontColor;
+        border-bottom: 1px solid transparent;
+        &:hover {
+            border-bottom: 1px solid #F78166;
+        }
+    }
+    a {
+        display: block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        &:hover {
+            background-color: #363b42;
+        }
+    }
+}
+
+.theme {
+    border-bottom: 1px solid #363b42;
+    padding-bottom: 20px;
+    >div {
+        @include flex;
+    }
+    &__title {
+        font-size: 30px;
+        font-weight: bold;
+        color: $fontColor;
+    }
+    &__account {
+        font-size: 14px;
+        width: 65%;
+        color: $fontColor;
+    }
+    button {
+        color: #56a6ff;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 5px 16px;
+        &:active {
+            background-color: #0d419d;
+            color: $fontColor;
+        }
+    }
+}
+
+.block {
+    @include flex;
+    flex-wrap: wrap;
+    p {
+        text-align: center;
+    }
+    >div {
+        width: 32%;
+        margin-top: 50px;
+    }
+    &__icons {
+        display: block;
+        margin: 0 auto;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 18px;
+        padding: 10px 0;
+        color: $fontColor;
+    }
+    &__account {
+        font-size: 14px;
+        color: $accountColor
+    }
+}

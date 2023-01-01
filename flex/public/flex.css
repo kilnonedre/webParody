@@ -1,0 +1,239 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+
+body {
+  background-color: #262626;
+}
+
+main {
+  width: 1300px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 60px;
+  border-radius: 10px;
+}
+
+.guide {
+  color: white;
+  padding: 30px 0;
+  width: 1420px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guide p {
+  line-height: 1.75em;
+}
+
+.guide__navigation {
+  color: #ffdfc7;
+  font-weight: bold;
+}
+
+.guide__author {
+  margin: 30px 0;
+}
+
+.guide > div:nth-child(1) {
+  width: 32em;
+}
+
+.guide__sponsor {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111111;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: baseline;
+}
+
+.nav__connent {
+  background-color: #fef6ec;
+  width: 45%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.nav__connent > p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav__connent p {
+  line-height: 2em;
+}
+
+.nav__connent__lists p {
+  display: inline-block;
+  text-indent: 1em;
+}
+
+.nav__connent__lists a {
+  color: #0089ce;
+}
+
+.nav__connent__lists a:hover {
+  color: #6ab7d7;
+}
+
+.nav__download {
+  background-color: #fffcf6;
+  border: 1px solid #cbcbcb;
+  width: 45%;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__download__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav__download__account {
+  width: 15em;
+  margin: 50px 0;
+}
+
+.nav__download button {
+  font-weight: bold;
+  color: white;
+  background-color: #5e5e5e;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  border-radius: 5px;
+}
+
+.nav__download button:hover {
+  background-color: #959492;
+}
+
+.nav__download img {
+  width: 35%;
+}
+
+.splitLine {
+  width: 100%;
+  height: 5px;
+  background-color: #ff7a18;
+  margin: 50px 0;
+}
+
+details {
+  margin-bottom: 30px;
+}
+
+details[open] {
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+details summary {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.flexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: baseline;
+}
+
+.flexBox > div {
+  width: 45%;
+}
+
+.flexBox img,
+.flexBox h2 {
+  width: 60%;
+}
+
+.flexBox__mainBox--purple {
+  padding: 2rem;
+  background-image: linear-gradient(to bottom, #ecd4f0, white);
+}
+
+.flexBox__mainBox--purple p,
+.flexBox__mainBox--purple h3 {
+  line-height: 2em;
+  margin: 1em 0;
+}
+
+.flexBox__mainBox--orange {
+  padding: 2rem;
+  background-image: linear-gradient(to bottom, #ffe7cc, white);
+}
+
+.flexBox__mainBox--orange p,
+.flexBox__mainBox--orange h3 {
+  line-height: 2em;
+  margin: 1em 0;
+}
+
+.flexBox ul {
+  padding-left: 1.5em;
+}
+
+.flexBox ul li {
+  list-style: disc;
+}
+
+.flexBox ul li::marker {
+  color: #ff7a18;
+}
+
+.flexBox__mainBox__codeBlock {
+  clear: both;
+  color: #fff;
+  background: #1b1b1b;
+  padding: 0;
+  tab-size: 2;
+  word-break: normal;
+  hyphens: none;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.flexBox__mainBox__codeBlock code {
+  scrollbar-color: #666 #201c29;
+  background: none;
+  white-space: pre;
+  overflow-x: scroll;
+  display: block;
+  max-width: 100%;
+  min-width: 100px;
+  font-size: 16px;
+  padding: 15px 20px 12px 22px;
+  font-size: inherit;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+}
+
+.flexBox__mainBox__codeBlock code p {
+  line-height: 1em;
+  margin: 0;
+}
+
+.flexBox__mainBox__codeBlock code p:nth-child(2) {
+  text-indent: 2em;
+}
